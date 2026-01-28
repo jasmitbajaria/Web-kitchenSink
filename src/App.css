@@ -1,0 +1,107 @@
+
+* {
+  scroll-behavior: smooth;
+  font-family: "Nunito", sans-serif !important; 
+}
+
+#root {  
+  width: 100%; 
+}
+
+:root {
+  /* Primary Colors */
+  --primary: #031953;
+  --skyblue: #009fe3;
+  --violet: #03247e;
+  --lightblue: #f5f6fa;
+  --blue: #1976d2;
+  --white-50: #fafbff;
+  
+  /* Theme Colors for Components */
+  --primary-main: var(--primary);
+  --primary-dark: #020f3a;
+  --primary-light: #03247e;
+  
+  --secondary-main: var(--skyblue);
+  --secondary-dark: #0080c0;
+  --secondary-light: #33b2e9;
+  
+  --background-default: #f8f9fa;
+  --background-paper: #ffffff;
+  
+  /* Text Colors */
+  --text-primary: #031953;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --text-light: #ffffff;
+  
+  /* Status Colors */
+  --success-main: #4caf50;
+  --success-light: rgba(76, 175, 80, 0.1);
+  --warning-main: #ff9800;
+  --warning-light: rgba(255, 152, 0, 0.1);
+  --error-main: #f44336;
+  --error-light: rgba(244, 67, 54, 0.1);
+  --info-main: #2196f3;
+  --info-light: rgba(33, 150, 243, 0.1);
+  
+  /* Border Colors */
+  --border-light: #e0e0e0;
+  --border-medium: #d1d1d1;
+  --border-dark: #b5b5b5;
+  
+  /* Button Colors */
+  --button-primary-bg: var(--skyblue);
+  --button-primary-hover: #0080c0;
+  --button-primary-text: #ffffff;
+  
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--skyblue);
+  --button-secondary-text: var(--skyblue);
+  --button-secondary-hover: rgba(0, 159, 227, 0.04);
+  --button-secondary-disable: #d1d1d1;
+  
+  /* Card Colors */
+  --card-bg: #ffffff;
+  --card-border: #e0e0e0;
+  --card-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+  
+  /* Table Colors */
+  --table-header-bg: #f5f5f5;
+  --table-header-text: #000000;
+  --table-row-hover: rgba(222, 224, 255, 0.3);
+
+  
+   /* Left Menu Specific Colors */
+  --leftmenu-bg: var(--background-paper);
+  --leftmenu-border: var(--border-light);
+  --leftmenu-text: var(--text-primary);
+  --leftmenu-text-secondary: var(--text-secondary);
+  --leftmenu-hover-bg: var(--button-secondary-hover);
+  --leftmenu-active-bg: var(--lightblue);
+  --leftmenu-active-border: var(--blue);
+  --leftmenu-active-text: var(--blue);
+  --leftmenu-icon-color: var(--text-primary);
+  --leftmenu-submenu-bg: var(--background-default);
+  
+  /* If you need specific overrides, you can define them separately */
+  /* --leftmenu-toggle-hover: rgba(245, 246, 250, 1); */
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--border-medium);
+}
