@@ -87,10 +87,10 @@ const ButtonShowcase: React.FC = () => {
           <AppButton label="Disabled" disabled />
         </Stack>
 
-        <Divider sx={{ my: 4, opacity: 1 }} />
+        {/* <Divider sx={{ my: 4, opacity: 1 }} /> */}
 
         {/* Bootstrap Variants */}
-        <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
+        {/* <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
           Bootstrap Variants
         </Typography>
 
@@ -101,12 +101,12 @@ const ButtonShowcase: React.FC = () => {
           <AppButton label="Danger" library="bootstrap" variant="danger" />
           <AppButton label="Warning" library="bootstrap" variant="warning" />
           <AppButton label="Info" library="bootstrap" variant="info" />
-        </Stack>
+        </Stack> */}
 
-        <Divider sx={{ my: 4, opacity: 1 }} />
+        {/* <Divider sx={{ my: 4, opacity: 1 }} /> */}
 
         {/* Bootstrap with Icons */}
-        <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
+        {/* <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
           Bootstrap with Icons
         </Typography>
         <Stack direction="row" spacing={2} mb={4}>
@@ -128,12 +128,12 @@ const ButtonShowcase: React.FC = () => {
             endIcon={<SendIcon />} 
             variant="success" 
           />
-        </Stack>
+        </Stack> */}
 
-        <Divider sx={{ my: 4, opacity: 1 }} />
+        {/* <Divider sx={{ my: 4, opacity: 1 }} /> */}
 
         {/* Bootstrap Loading */}
-        <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
+        {/* <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
           Bootstrap Loading
         </Typography>
         <Stack direction="row" spacing={2} mb={4}>
@@ -155,7 +155,7 @@ const ButtonShowcase: React.FC = () => {
             loading 
             variant="secondary" 
           />
-        </Stack>
+        </Stack> */}
       </Box>
     </>
   );

@@ -140,29 +140,29 @@ const AppButton: React.FC<AppButtonProps> = ({
   }
 
   // ---------- BOOTSTRAP BUTTON ----------
-  const bootstrapClass = `btn btn-${variant} ${
-    size === "small" ? "btn-sm" : size === "large" ? "btn-lg" : ""
-  } ${fullWidth ? "w-100" : ""} ${loading ? "disabled" : ""}`;
+  // const bootstrapClass = `btn btn-${variant} ${
+  //   size === "small" ? "btn-sm" : size === "large" ? "btn-lg" : ""
+  // } ${fullWidth ? "w-100" : ""} ${loading ? "disabled" : ""}`;
 
-  return (
-    <button
-      className={bootstrapClass}
-      onClick={onClick}
-      disabled={disabled || loading}
-      type="button"
-    >
-      {loading && (
-        <span 
-          className="spinner-border spinner-border-sm me-2" 
-          role="status" 
-          aria-hidden="true"
-        />
-      )}
-      {!loading && startIcon && <span className="me-1">{startIcon}</span>}
-      {label}
-      {endIcon && <span className="ms-1">{endIcon}</span>}
-    </button>
-  );
+  // return (
+  //   <button
+  //     className={bootstrapClass}
+  //     onClick={onClick}
+  //     disabled={disabled || loading}
+  //     type="button"
+  //   >
+  //     {loading && (
+  //       <span 
+  //         className="spinner-border spinner-border-sm me-2" 
+  //         role="status" 
+  //         aria-hidden="true"
+  //       />
+  //     )}
+  //     {!loading && startIcon && <span className="me-1">{startIcon}</span>}
+  //     {label}
+  //     {endIcon && <span className="ms-1">{endIcon}</span>}
+  //   </button>
+  // );
 };
 
 export default AppButton;

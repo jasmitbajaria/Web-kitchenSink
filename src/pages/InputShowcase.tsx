@@ -3,7 +3,7 @@ import { useState } from "react";
 import InputField from "../components/InputFields/InputField";
 
 const InputFieldShowcase: React.FC = () => {
-
+  const [date, setDate] = useState("");
   return (
     <Box
       sx={{
@@ -91,7 +91,13 @@ const InputFieldShowcase: React.FC = () => {
           />
         </Grid>
         <Grid size={{ xs: 12, md: 4 }}>
-          <InputField label="Date" type="date" fullWidth />
+          <InputField
+            label="Select Date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            fullWidth
+          />
         </Grid>
       </Grid>
 
@@ -165,7 +171,7 @@ const InputFieldShowcase: React.FC = () => {
             fullWidth
           />
         </Grid>
-        <Grid size={{ xs: 12 , md:4}}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <InputField
             label="With Helper Text"
             placeholder="Enter text"

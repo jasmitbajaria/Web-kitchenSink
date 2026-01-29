@@ -16,8 +16,6 @@ import {
   Notifications,
   VpnKey,
   ExitToApp,
-  
-  GitHub,
 } from '@mui/icons-material';
 
 const Header: React.FC = () => {
