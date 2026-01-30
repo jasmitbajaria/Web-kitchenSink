@@ -70,7 +70,7 @@ const ButtonShowcase: React.FC = () => {
           <AppButton label="Add" startIcon={<AddIcon />} />
           <AppButton label="Delete" variant="outlined" startIcon={<DeleteIcon />} />
           <AppButton label="Send" endIcon={<SendIcon />} />
-          <AppButton label="Download" startIcon={<DownloadIcon />} variant="primary" />
+          <AppButton label="Download" startIcon={<DownloadIcon />} variant="contained" />
           <AppButton label="Save" startIcon={<SaveIcon />} variant="text" />
           <AppButton label="Loading" loading />
         </Stack>

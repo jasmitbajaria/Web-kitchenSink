@@ -1,36 +1,45 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import AppButton from '../components/Buttons/AppButton';
-import { Add as AddIcon, Delete as DeleteIcon } from '@mui/icons-material';
-import React from 'react';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import AppButton from "../components/Buttons/AppButton";
+import { Add as AddIcon, Delete as DeleteIcon } from "@mui/icons-material";
+import React from "react";
 
 const meta: Meta<typeof AppButton> = {
-  title: 'Components/AppButton',
+  title: "Components/AppButton",
   component: AppButton,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'text', 'outlined', 'contained'],
+      control: "select",
+      options: ["text", "outlined", "contained"],
     },
-    library: {
-      control: 'select',
-      options: ['mui', 'bootstrap'],
+    colorVariant: {
+      control: "select",
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "light",
+        "dark",
+      ],
     },
     size: {
-      control: 'select',
-      options: ['small', 'medium', 'large'],
+      control: "select",
+      options: ["small", "medium", "large"],
     },
     disabled: {
-      control: 'boolean',
+      control: "boolean",
     },
     loading: {
-      control: 'boolean',
+      control: "boolean",
     },
     fullWidth: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
 };
@@ -41,124 +50,109 @@ type Story = StoryObj<typeof AppButton>;
 // Default story
 export const Primary: Story = {
   args: {
-    label: 'Primary Button',
-    variant: 'primary',
-    library: 'mui',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: 'Secondary Button',
-    variant: 'secondary',
-    library: 'mui',
-  },
-};
-
-export const Success: Story = {
-  args: {
-    label: 'Success Button',
-    variant: 'success',
-    library: 'mui',
-  },
-};
-
-export const Danger: Story = {
-  args: {
-    label: 'Danger Button',
-    variant: 'danger',
-    library: 'mui',
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    label: 'Warning Button',
-    variant: 'warning',
-    library: 'mui',
-  },
-};
-
-export const Info: Story = {
-  args: {
-    label: 'Info Button',
-    variant: "success",
-    library: 'mui',
+    label: "Primary Button",
+    variant: "contained",
   },
 };
 
 export const Outlined: Story = {
   args: {
-    label: 'Outlined Button',
-    variant: 'outlined',
-    library: 'mui',
+    label: "Outlined Button",
+    variant: "outlined",
   },
 };
 
 export const Text: Story = {
   args: {
-    label: 'Text Button',
-    variant: 'text',
-    library: 'mui',
+    label: "Text Button",
+    variant: "text",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    label: "Secondary Button",
+    colorVariant: "secondary",
+  },
+};
+
+export const Success: Story = {
+  args: {
+    label: "Success Button",
+    colorVariant: "success",
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    label: "Danger Button",
+    colorVariant: "danger",
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    label: "Warning Button",
+    colorVariant: "warning",
+  },
+};
+
+export const Info: Story = {
+  args: {
+    label: "Info Button",
+    colorVariant: "success",
   },
 };
 
 export const Small: Story = {
   args: {
-    label: 'Small Button',
-    size: 'small',
-    library: 'mui',
+    label: "Small Button",
+    size: "small",
   },
 };
 
 export const Large: Story = {
   args: {
-    label: 'Large Button',
-    size: 'large',
-    library: 'mui',
+    label: "Large Button",
+    size: "large",
   },
 };
 
 export const WithStartIcon: Story = {
   args: {
-    label: 'Add Button',
+    label: "Add Button",
     startIcon: React.createElement(AddIcon),
-    library: 'mui',
   },
 };
 
-// export const WithEndIcon: Story = {
-//   args: {
-//     label: 'Delete Button',
-//     endIcon: DeleteIcon,
-//     library: 'mui',
-//   },
-// };
+export const WithEndIcon: Story = {
+  args: {
+    label: "Delete Button",
+    endIcon: React.createElement(DeleteIcon),
+  },
+};
 
 export const Loading: Story = {
   args: {
-    label: 'Loading',
+    label: "Loading",
     loading: true,
-    library: 'mui',
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: 'Disabled Button',
+    label: "Disabled Button",
     disabled: true,
-    library: 'mui',
   },
 };
 
 export const FullWidth: Story = {
   args: {
-    label: 'Full Width Button',
+    label: "Full Width Button",
     fullWidth: true,
-    library: 'mui',
   },
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
 };
 
