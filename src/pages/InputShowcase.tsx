@@ -1,6 +1,7 @@
 import { Box, Typography, Stack, Divider, Grid } from "@mui/material";
 import { useState } from "react";
 import InputField from "../components/InputFields/InputField";
+import Checkbox from "../components/Checkbox/Checkbox";
 
 const InputFieldShowcase: React.FC = () => {
   const [date, setDate] = useState("");

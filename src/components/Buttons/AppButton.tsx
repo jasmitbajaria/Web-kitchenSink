@@ -8,6 +8,7 @@ interface AppButtonProps {
     | "text"
     | "outlined"
     | "contained";
+
   colorVariant?:
     | "primary"
     | "secondary"
@@ -17,7 +18,7 @@ interface AppButtonProps {
     | "info"
     | "light"
     | "dark";
-  // library?: "mui" | "bootstrap";l
+  // library?: "mui" | "bootstrap";
   disabled?: boolean;
   fullWidth?: boolean;
   size?: "small" | "medium" | "large";
