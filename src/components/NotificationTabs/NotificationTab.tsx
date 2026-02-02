@@ -32,7 +32,6 @@ const NotificationTab: React.FC<NotificationTabProps> = ({
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      icon: true,
       style: {
         background: toastColors[type],
         color: type === "warning" ? "#000" : "#fff",
@@ -40,10 +39,10 @@ const NotificationTab: React.FC<NotificationTabProps> = ({
         padding: "14px 16px",
         fontWeight: 500,
       },
-      progressStyle: {
-        background:
-          type === "warning" ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.7)",
-      },
+    //   progressStyle: {
+    //     background:
+    //       type === "warning" ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.7)",
+    //   },
     });
   };
 
