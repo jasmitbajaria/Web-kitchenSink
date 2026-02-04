@@ -22,7 +22,6 @@ const MediaCard: React.FC<MediaCardProps> = ({
 
   return (
     <>
-      
       <Box
         sx={{
           padding: "30px",
@@ -32,7 +31,6 @@ const MediaCard: React.FC<MediaCardProps> = ({
           width: 304,
         }}
       >
-       
         <Box
           onClick={() => setOpen(true)}
           sx={{
@@ -46,7 +44,6 @@ const MediaCard: React.FC<MediaCardProps> = ({
             },
           }}
         >
-          {/* TOP CHANNEL BAR */}
           <Box
             sx={{
               display: "flex",
@@ -77,7 +74,6 @@ const MediaCard: React.FC<MediaCardProps> = ({
             <MoreVertIcon sx={{ color: "#fff" }} />
           </Box>
 
-          {/* VIDEO THUMBNAIL */}
           <Box
             sx={{
               position: "relative",
@@ -87,7 +83,6 @@ const MediaCard: React.FC<MediaCardProps> = ({
               backgroundPosition: "center",
             }}
           >
-           
             <Box
               sx={{
                 position: "absolute",
@@ -124,7 +119,6 @@ const MediaCard: React.FC<MediaCardProps> = ({
             </Box>
           </Box>
 
-          
           <Box sx={{ padding: "14px 12px" }}>
             <Typography
               sx={{
@@ -141,7 +135,6 @@ const MediaCard: React.FC<MediaCardProps> = ({
         </Box>
       </Box>
 
-      
       <Modal open={open} onClose={() => setOpen(false)}>
         <Box
           sx={{
