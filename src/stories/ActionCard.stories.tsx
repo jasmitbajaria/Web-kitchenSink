@@ -29,7 +29,7 @@ type Story = StoryObj<typeof ActionCard>;
 export const CreateAccount: Story = {
   args: {
     label: "Create Account",
-    icon: PersonAddIcon, // ✅ TS-safe
+    icon: PersonAddIcon, //
   },
 };
 

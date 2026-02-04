@@ -2,13 +2,13 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 export interface ActionCardProps {
-  icon: React.ElementType; 
+  icon: React.ElementType;
   label: string;
   onClick?: () => void;
 }
 
 const ActionCard: React.FC<ActionCardProps> = ({
-  icon: Icon, 
+  icon: Icon,
   label,
   onClick,
 }) => {
@@ -34,7 +34,6 @@ const ActionCard: React.FC<ActionCardProps> = ({
           : {},
       }}
     >
-      {/* Icon box */}
       <Box
         sx={{
           width: 72,
@@ -50,7 +49,6 @@ const ActionCard: React.FC<ActionCardProps> = ({
         <Icon sx={{ fontSize: 34, color: "#1D4ED8" }} />
       </Box>
 
-      {/* Label */}
       <Typography
         sx={{
           fontSize: "15px",
