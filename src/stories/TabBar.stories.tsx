@@ -26,13 +26,11 @@ const meta: Meta<typeof TabBar> = {
 export default meta;
 type Story = StoryObj<typeof TabBar>;
 
-/* ---------- Wrapper (for controlled tabs) ---------- */
 const TabWrapper = (args: any) => {
   const [value, setValue] = useState(0);
   return <TabBar {...args} value={value} onChange={setValue} />;
 };
 
-/* ---------- Stories ---------- */
 
 // Default
 export const Default: Story = {
