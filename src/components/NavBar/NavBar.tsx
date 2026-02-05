@@ -61,25 +61,37 @@ const Header: React.FC<NavBarProps> = ({
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between", px: 3 }}>
-          {/* Left Section - Logo */}
+          {/* Left Section - Logo or Hello Message */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <img
-              src={logoSrc}
-              alt="Logo"
-              style={{
-                height: "40px",
-                objectFit: "contain",
-                cursor: "pointer",
-              }}
-            />
-            <Divider orientation="vertical" variant="middle" flexItem />
-            {/* Welcome Message */}
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Typography variant="body1" sx={{ color: "#333" }}>
-                Hello, {username}.
-              </Typography>
-              <span style={{ fontSize: "20px" }}>👋</span>
-            </Box>
+            {logoSrc ? (
+              <>
+                <img
+                  src={logoSrc}
+                  alt="Logo"
+                  style={{
+                    height: "40px",
+                    objectFit: "contain",
+                    cursor: "pointer",
+                  }}
+                />
+                <Divider orientation="vertical" variant="middle" flexItem />
+                {/* Welcome Message */}
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Typography variant="body1" sx={{ color: "#333" }}>
+                    Hello, {username}.
+                  </Typography>
+                  <span style={{ fontSize: "20px" }}>👋</span>
+                </Box>
+              </>
+            ) : (
+              /* Only Hello Message when no logo */
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <Typography variant="body1" sx={{ color: "#333" }}>
+                  Hello, {username}.
+                </Typography>
+                <span style={{ fontSize: "20px" }}>👋</span>
+              </Box>
+            )}
           </Box>
 
           {/* Right Section - Icons & Profile */}

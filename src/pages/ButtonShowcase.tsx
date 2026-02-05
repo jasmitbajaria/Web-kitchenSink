@@ -1,5 +1,5 @@
 import { Box, Typography, Stack, Divider } from "@mui/material";
-import AppButton from "../components/Buttons/AppButton";
+import Button from "../components/Buttons/Button";
 import { 
   Add as AddIcon, 
   Delete as DeleteIcon, 
@@ -43,9 +43,9 @@ const ButtonShowcase: React.FC = () => {
         </Typography>
 
         <Stack direction="row" spacing={2} mb={4}>
-          <AppButton label="Contained" />
-          <AppButton label="Outlined" variant="outlined" />
-          <AppButton label="Text" variant="text" />
+          <Button label="Contained" />
+          <Button label="Outlined" variant="outlined" />
+          <Button label="Text" variant="text" />
         </Stack>
 
         <Divider sx={{ my: 4, opacity: 1 }} />
@@ -55,9 +55,9 @@ const ButtonShowcase: React.FC = () => {
           Sizes
         </Typography>
         <Stack direction="row" spacing={2} alignItems="center" mb={4}>      
-          <AppButton label="Small" size="small" />
-          <AppButton label="Medium" size="medium" />
-          <AppButton label="Large" size="large" />
+          <Button label="Small" size="small" />
+          <Button label="Medium" size="medium" />
+          <Button label="Large" size="large" />
         </Stack>
 
         <Divider sx={{ my: 4, opacity: 1 }} />
@@ -67,12 +67,12 @@ const ButtonShowcase: React.FC = () => {
           Icons and Loading
         </Typography>
         <Stack direction="row" spacing={2} mb={4}>
-          <AppButton label="Add" startIcon={<AddIcon />} />
-          <AppButton label="Delete" variant="outlined" startIcon={<DeleteIcon />} />
-          <AppButton label="Send" endIcon={<SendIcon />} />
-          <AppButton label="Download" startIcon={<DownloadIcon />} variant="contained" />
-          <AppButton label="Save" startIcon={<SaveIcon />} variant="text" />
-          <AppButton label="Loading" loading />
+          <Button label="Add" startIcon={<AddIcon />} />
+          <Button label="Delete" variant="outlined" startIcon={<DeleteIcon />} />
+          <Button label="Send" endIcon={<SendIcon />} />
+          <Button label="Download" startIcon={<DownloadIcon />} variant="contained" />
+          <Button label="Save" startIcon={<SaveIcon />} variant="text" />
+          <Button label="Loading" loading />
         </Stack>
 
         <Divider sx={{ my: 4, opacity: 1 }} />
@@ -83,8 +83,8 @@ const ButtonShowcase: React.FC = () => {
           States
         </Typography>
         <Stack direction="row" spacing={2}>
-          <AppButton label="Normal" />
-          <AppButton label="Disabled" disabled />
+          <Button label="Normal" />
+          <Button label="Disabled" disabled />
         </Stack>
 
         {/* <Divider sx={{ my: 4, opacity: 1 }} /> */}
@@ -95,12 +95,12 @@ const ButtonShowcase: React.FC = () => {
         </Typography>
 
         <Stack direction="row" spacing={2} mb={4}>
-          <AppButton label="Primary" library="bootstrap" variant="primary" />
-          <AppButton label="Secondary" library="bootstrap" variant="secondary" />
-          <AppButton label="Success" library="bootstrap" variant="success" />
-          <AppButton label="Danger" library="bootstrap" variant="danger" />
-          <AppButton label="Warning" library="bootstrap" variant="warning" />
-          <AppButton label="Info" library="bootstrap" variant="info" />
+          <Button label="Primary" library="bootstrap" variant="primary" />
+          <Button label="Secondary" library="bootstrap" variant="secondary" />
+          <Button label="Success" library="bootstrap" variant="success" />
+          <Button label="Danger" library="bootstrap" variant="danger" />
+          <Button label="Warning" library="bootstrap" variant="warning" />
+          <Button label="Info" library="bootstrap" variant="info" />
         </Stack> */}
 
         {/* <Divider sx={{ my: 4, opacity: 1 }} /> */}
@@ -110,19 +110,19 @@ const ButtonShowcase: React.FC = () => {
           Bootstrap with Icons
         </Typography>
         <Stack direction="row" spacing={2} mb={4}>
-          <AppButton 
+          <Button 
             label="Add" 
             library="bootstrap" 
             startIcon={<AddIcon />} 
             variant="primary" 
           />
-          <AppButton 
+          <Button 
             label="Delete" 
             library="bootstrap" 
             startIcon={<DeleteIcon />} 
             variant="danger" 
           />
-          <AppButton 
+          <Button 
             label="Send" 
             library="bootstrap" 
             endIcon={<SendIcon />} 
@@ -137,19 +137,19 @@ const ButtonShowcase: React.FC = () => {
           Bootstrap Loading
         </Typography>
         <Stack direction="row" spacing={2} mb={4}>
-          <AppButton 
+          <Button 
             label="Loading" 
             library="bootstrap" 
             loading 
             variant="primary" 
           />
-          <AppButton 
+          <Button 
             label="Processing" 
             library="bootstrap" 
             loading 
             variant="success" 
           />
-          <AppButton 
+          <Button 
             label="Submitting" 
             library="bootstrap" 
             loading 
