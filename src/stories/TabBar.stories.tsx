@@ -37,9 +37,9 @@ export const Default: Story = {
   render: (args) => <TabWrapper {...args} />,
   args: {
     tabs: [
-      { label: "Item One" },
-      { label: "Item Two" },
-      { label: "Item Three" },
+      { label: "Trianing" },
+      { label: "Software" },
+      { label: "About" },
     ],
   },
 };
@@ -65,10 +65,10 @@ export const Disabled: Story = {
   render: (args) => <TabWrapper {...args} />,
   args: {
     disabled: true,
-    tabs: [
-      { label: "Item One" },
-      { label: "Item Two" },
-      { label: "Item Three" },
+   tabs: [
+      { label: "Trianing" },
+      { label: "Software" },
+      { label: "About" },
     ],
   },
 };

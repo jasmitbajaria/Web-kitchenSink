@@ -7,7 +7,6 @@ interface InputFieldProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: "text" | "password" | "email" | "number" | "tel" | "url" | "search" | "date" | "time" | "datetime-local";
   placeholder?: string;
-  library?: "mui" | "bootstrap";
   disabled?: boolean;
   required?: boolean;
   fullWidth?: boolean;
@@ -25,11 +24,10 @@ const InputField: React.FC<InputFieldProps> = ({
   onChange,
   type = "text",
   placeholder,
-  library = "mui",
   disabled = false,
   required = false,
   fullWidth = false,
-  size = "medium",
+  size = "small",
   error = false,
   helperText,
   variant = "outlined",
@@ -37,7 +35,7 @@ const InputField: React.FC<InputFieldProps> = ({
   rows = 4,
 }) => {
   // ---------- MATERIAL UI INPUT ----------
-  if (library === "mui") {
+ 
     return (
       <MUITextField
         label={label}
@@ -59,46 +57,45 @@ const InputField: React.FC<InputFieldProps> = ({
   }
 
   // ---------- BOOTSTRAP INPUT ----------
-  const bootstrapClass = `form-control ${
-    size === "small" ? "form-control-sm" : size === "large" ? "form-control-lg" : ""
-  } ${error ? "is-invalid" : ""}`;
+  // const bootstrapClass = `form-control ${
+  //   size === "small" ? "form-control-sm" : size === "large" ? "form-control-lg" : ""
+  // } ${error ? "is-invalid" : ""}`;
 
-  return (
-    <div className={fullWidth ? "w-100" : ""}>
-      {label && (
-        <label className="form-label">
-          {label}
-          {required && <span className="text-danger"> *</span>}
-        </label>
-      )}
-      {multiline ? (
-        <textarea
-          className={bootstrapClass}
-          value={value}
-          onChange={()=>{}}
-          placeholder={placeholder}
-          disabled={disabled}
-          required={required}
-          rows={rows}
-        />
-      ) : (
-        <input
-          type={type}
-          className={bootstrapClass}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          disabled={disabled}
-          required={required}
-        />
-      )}
-      {helperText && (
-        <div className={error ? "invalid-feedback d-block" : "form-text"}>
-          {helperText}
-        </div>
-      )}
-    </div>
-  );
-};
+  // return (
+  //   <div className={fullWidth ? "w-100" : ""}>
+  //     {label && (
+  //       <label className="form-label">
+  //         {label}
+  //         {required && <span className="text-danger"> *</span>}
+  //       </label>
+  //     )}
+  //     {multiline ? (
+  //       <textarea
+  //         className={bootstrapClass}
+  //         value={value}
+  //         onChange={()=>{}}
+  //         placeholder={placeholder}
+  //         disabled={disabled}
+  //         required={required}
+  //         rows={rows}
+  //       />
+  //     ) : (
+  //       <input
+  //         type={type}
+  //         className={bootstrapClass}
+  //         value={value}
+  //         onChange={onChange}
+  //         placeholder={placeholder}
+  //         disabled={disabled}
+  //         required={required}
+  //       />
+  //     )}
+  //     {helperText && (
+  //       <div className={error ? "invalid-feedback d-block" : "form-text"}>
+  //         {helperText}
+  //       </div>
+  //     )}
+  //   </div>
+  // );
 
 export default InputField;

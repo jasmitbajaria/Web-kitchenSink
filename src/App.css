@@ -38,12 +38,16 @@
   /* Status Colors */
   --success-main: #4caf50;
   --success-light: rgba(76, 175, 80, 0.1);
+  --success-hover: #45a049;
   --warning-main: #ff9800;
   --warning-light: rgba(255, 152, 0, 0.1);
+  --warning-hover: #e68900;
   --error-main: #f44336;
   --error-light: rgba(244, 67, 54, 0.1);
+  --error-hover: #da190b;
   --info-main: #2196f3;
   --info-light: rgba(33, 150, 243, 0.1);
+  --info-hover: #0b7dda;
   
   /* Border Colors */
   --border-light: #e0e0e0;
@@ -54,12 +58,21 @@
   --button-primary-bg: var(--skyblue);
   --button-primary-hover: #0080c0;
   --button-primary-text: #ffffff;
+  --button-primary-hover-light: rgba(0, 159, 227, 0.04);
   
   --button-secondary-bg: transparent;
   --button-secondary-border: var(--skyblue);
   --button-secondary-text: var(--skyblue);
   --button-secondary-hover: rgba(0, 159, 227, 0.04);
   --button-secondary-disable: #d1d1d1;
+  
+  --button-light-bg: #f8f9fa;
+  --button-light-hover: #e2e6ea;
+  --button-light-text: #212529;
+  
+  --button-dark-bg: #343a40;
+  --button-dark-hover: #23272b;
+  --button-dark-text: var(--text-light);
   
   /* Card Colors */
   --card-bg: #ffffff;

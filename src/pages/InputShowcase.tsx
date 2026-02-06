@@ -1,6 +1,7 @@
 import { Box, Typography, Stack, Divider, Grid } from "@mui/material";
 import { useState } from "react";
 import InputField from "../components/InputFields/InputField";
+import Checkbox from "../components/Checkbox/Checkbox";
 
 const InputFieldShowcase: React.FC = () => {
   const [date, setDate] = useState("");
@@ -207,17 +208,11 @@ const InputFieldShowcase: React.FC = () => {
 
       <Grid container spacing={3} mb={4}>
         <Grid size={{ xs: 12, md: 6 }}>
-          <InputField
-            label="Text Input"
-            library="bootstrap"
-            placeholder="Enter text"
-            fullWidth
-          />
+          <InputField label="Text Input" placeholder="Enter text" fullWidth />
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
           <InputField
             label="Email Input"
-            library="bootstrap"
             type="email"
             placeholder="Enter email"
             fullWidth
@@ -226,7 +221,6 @@ const InputFieldShowcase: React.FC = () => {
         <Grid size={{ xs: 12, md: 6 }}>
           <InputField
             label="Password Input"
-            library="bootstrap"
             type="password"
             placeholder="Enter password"
             fullWidth
@@ -235,7 +229,6 @@ const InputFieldShowcase: React.FC = () => {
         <Grid size={{ xs: 12, md: 6 }}>
           <InputField
             label="Required Field"
-            library="bootstrap"
             required
             placeholder="Required"
             fullWidth
@@ -244,7 +237,6 @@ const InputFieldShowcase: React.FC = () => {
         <Grid size={{ xs: 12, md: 6 }}>
           <InputField
             label="Error State"
-            library="bootstrap"
             error
             helperText="This field has an error"
             fullWidth
@@ -253,7 +245,6 @@ const InputFieldShowcase: React.FC = () => {
         <Grid size={{ xs: 12, md: 6 }}>
           <InputField
             label="Disabled"
-            library="bootstrap"
             disabled
             placeholder="Disabled"
             fullWidth
@@ -262,7 +253,6 @@ const InputFieldShowcase: React.FC = () => {
         <Grid size={{ xs: 12, md: 6 }}>
           <InputField
             label="Multiline Bootstrap"
-            library="bootstrap"
             multiline
             rows={4}
             placeholder="Enter multiple lines"

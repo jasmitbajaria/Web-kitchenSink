@@ -4,7 +4,12 @@ import { Button as MUIButton, CircularProgress } from "@mui/material";
 interface AppButtonProps {
   label: string;
   onClick?: () => void;
-  variant?: 
+  variant?:
+    | "text"
+    | "outlined"
+    | "contained";
+
+  colorVariant?:
     | "primary"
     | "secondary"
     | "success"
@@ -12,11 +17,8 @@ interface AppButtonProps {
     | "warning"
     | "info"
     | "light"
-    | "dark"
-    | "text"
-    | "outlined"
-    | "contained";
-  library?: "mui" | "bootstrap";
+    | "dark";
+  // library?: "mui" | "bootstrap";
   disabled?: boolean;
   fullWidth?: boolean;
   size?: "small" | "medium" | "large";
@@ -28,8 +30,9 @@ interface AppButtonProps {
 const AppButton: React.FC<AppButtonProps> = ({
   label,
   onClick,
-  variant = "primary",
-  library = "mui",
+  variant = "contained",
+  colorVariant = "primary",
+  // library = "mui",
   disabled = false,
   fullWidth = false,
   size = "medium",
@@ -38,106 +41,216 @@ const AppButton: React.FC<AppButtonProps> = ({
   loading = false,
 }) => {
   // ---------- MATERIAL UI BUTTON ----------
-  if (library === "mui") {
-    const isVariantType = variant === "outlined" || variant === "text" || variant === "contained";
-    const muiVariant = isVariantType ? variant : "contained";
 
-    // Custom color styles based on variant
-    const getColorStyles = () => {
-      if (isVariantType) return {};
-
-      const colorMap = {
-        primary: {
+  // Custom color styles based on colorVariant and variant
+  const getColorStyles = () => {
+    const colorMap = {
+      primary: {
+        contained: {
           backgroundColor: "var(--button-primary-bg)",
           color: "var(--button-primary-text)",
           "&:hover": {
             backgroundColor: "var(--button-primary-hover)",
           },
-          "&:disabled": {
-            backgroundColor: "var(--button-secondary-disable)",
-            color: "var(--text-light)",
+        },
+        outlined: {
+          color: "var(--button-primary-bg)",
+          borderColor: "var(--button-primary-bg)",
+          "&:hover": {
+            backgroundColor: "var(--button-primary-hover-light)",
+            borderColor: "var(--button-primary-hover)",
           },
         },
-        secondary: {
-          backgroundColor: "transparent",
+        text: {
+          color: "var(--button-primary-bg)",
+          "&:hover": {
+            backgroundColor: "var(--button-primary-hover-light)",
+          },
+        },
+      },
+      secondary: {
+        contained: {
+          backgroundColor: "var(--button-secondary-bg)",
           color: "var(--button-secondary-text)",
           border: "1px solid var(--button-secondary-border)",
           "&:hover": {
             backgroundColor: "var(--button-secondary-hover)",
             borderColor: "var(--button-secondary-border)",
           },
-          "&:disabled": {
-            borderColor: "var(--button-secondary-disable)",
-            color: "var(--button-secondary-disable)",
+        },
+        outlined: {
+          color: "var(--button-secondary-text)",
+          borderColor: "var(--button-secondary-border)",
+          "&:hover": {
+            backgroundColor: "var(--button-secondary-hover)",
           },
         },
-        success: {
+        text: {
+          color: "var(--button-secondary-text)",
+          "&:hover": {
+            backgroundColor: "var(--button-secondary-hover)",
+          },
+        },
+      },
+      success: {
+        contained: {
           backgroundColor: "var(--success-main)",
           color: "var(--text-light)",
           "&:hover": {
-            backgroundColor: "#45a049",
+            backgroundColor: "var(--success-hover)",
           },
         },
-        danger: {
+        outlined: {
+          color: "var(--success-main)",
+          borderColor: "var(--success-main)",
+          "&:hover": {
+            backgroundColor: "var(--success-light)",
+          },
+        },
+        text: {
+          color: "var(--success-main)",
+          "&:hover": {
+            backgroundColor: "var(--success-light)",
+          },
+        },
+      },
+      danger: {
+        contained: {
           backgroundColor: "var(--error-main)",
           color: "var(--text-light)",
           "&:hover": {
-            backgroundColor: "#da190b",
+            backgroundColor: "var(--error-hover)",
           },
         },
-        warning: {
+        outlined: {
+          color: "var(--error-main)",
+          borderColor: "var(--error-main)",
+          "&:hover": {
+            backgroundColor: "var(--error-light)",
+          },
+        },
+        text: {
+          color: "var(--error-main)",
+          "&:hover": {
+            backgroundColor: "var(--error-light)",
+          },
+        },
+      },
+      warning: {
+        contained: {
           backgroundColor: "var(--warning-main)",
           color: "var(--text-light)",
           "&:hover": {
-            backgroundColor: "#e68900",
+            backgroundColor: "var(--warning-hover)",
           },
         },
-        info: {
+        outlined: {
+          color: "var(--warning-main)",
+          borderColor: "var(--warning-main)",
+          "&:hover": {
+            backgroundColor: "var(--warning-light)",
+          },
+        },
+        text: {
+          color: "var(--warning-main)",
+          "&:hover": {
+            backgroundColor: "var(--warning-light)",
+          },
+        },
+      },
+      info: {
+        contained: {
           backgroundColor: "var(--info-main)",
           color: "var(--text-light)",
           "&:hover": {
-            backgroundColor: "#0b7dda",
+            backgroundColor: "var(--info-hover)",
           },
         },
-        light: {
-          backgroundColor: "#f8f9fa",
-          color: "#212529",
+        outlined: {
+          color: "var(--info-main)",
+          borderColor: "var(--info-main)",
           "&:hover": {
-            backgroundColor: "#e2e6ea",
+            backgroundColor: "var(--info-light)",
           },
         },
-        dark: {
-          backgroundColor: "#343a40",
-          color: "var(--text-light)",
+        text: {
+          color: "var(--info-main)",
           "&:hover": {
-            backgroundColor: "#23272b",
+            backgroundColor: "var(--info-light)",
           },
         },
-      };
-
-      return colorMap[variant] || colorMap.primary;
+      },
+      light: {
+        contained: {
+          backgroundColor: "var(--button-light-bg)",
+          color: "var(--button-light-text)",
+          "&:hover": {
+            backgroundColor: "var(--button-light-hover)",
+          },
+        },
+        outlined: {
+          color: "var(--button-light-text)",
+          borderColor: "var(--button-light-bg)",
+          "&:hover": {
+            backgroundColor: "var(--button-light-bg)",
+          },
+        },
+        text: {
+          color: "var(--button-light-text)",
+          "&:hover": {
+            backgroundColor: "var(--button-light-bg)",
+          },
+        },
+      },
+      dark: {
+        contained: {
+          backgroundColor: "var(--button-dark-bg)",
+          color: "var(--button-dark-text)",
+          "&:hover": {
+            backgroundColor: "var(--button-dark-hover)",
+          },
+        },
+        outlined: {
+          color: "var(--button-dark-bg)",
+          borderColor: "var(--button-dark-bg)",
+          "&:hover": {
+            backgroundColor: "rgba(52, 58, 64, 0.04)",
+          },
+        },
+        text: {
+          color: "var(--button-dark-bg)",
+          "&:hover": {
+            backgroundColor: "rgba(52, 58, 64, 0.04)",
+          },
+        },
+      },
     };
 
-    return (
-      <MUIButton
-        variant={muiVariant}
-        onClick={onClick}
-        disabled={disabled || loading}
-        fullWidth={fullWidth}
-        size={size}
-        startIcon={loading ? <CircularProgress size={16} color="inherit" /> : startIcon}
-        endIcon={endIcon}
-        sx={{
-          textTransform: "none",
-          borderRadius: "8px",
-          fontWeight: 500,
-          ...getColorStyles(),
-        }}
-      >
-        {label}
-      </MUIButton>
-    );
-  }
+    return colorMap[colorVariant]?.[variant] || colorMap.primary[variant];
+  };
+
+  return (
+    <MUIButton
+      variant={variant}
+      onClick={onClick}
+      disabled={disabled || loading}
+      fullWidth={fullWidth}
+      size={size}
+      startIcon={
+        loading ? <CircularProgress size={16} color="inherit" /> : startIcon
+      }
+      endIcon={endIcon}
+      sx={{
+        textTransform: "none",
+        borderRadius: "8px",
+        fontWeight: 500,
+        ...getColorStyles(),
+      }}
+    >
+      {label}
+    </MUIButton>
+  );
+};
 
   // ---------- BOOTSTRAP BUTTON ----------
   // const bootstrapClass = `btn btn-${variant} ${
@@ -152,9 +265,9 @@ const AppButton: React.FC<AppButtonProps> = ({
   //     type="button"
   //   >
   //     {loading && (
-  //       <span 
-  //         className="spinner-border spinner-border-sm me-2" 
-  //         role="status" 
+  //       <span
+  //         className="spinner-border spinner-border-sm me-2"
+  //         role="status"
   //         aria-hidden="true"
   //       />
   //     )}
@@ -163,6 +276,6 @@ const AppButton: React.FC<AppButtonProps> = ({
   //     {endIcon && <span className="ms-1">{endIcon}</span>}
   //   </button>
   // );
-};
+
 
 export default AppButton;
