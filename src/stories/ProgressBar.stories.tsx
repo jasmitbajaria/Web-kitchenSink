@@ -15,13 +15,13 @@ const meta: Meta<typeof ProgressBar> = {
 export default meta;
 type Story = StoryObj<typeof ProgressBar>;
 
-export const Default: Story = {
-  args: {
-    steps: ["Step 1", "Step 2", "Step 3"],
-    activeStep: 1,
-    variant: "bar",
-  },
-};
+// export const Default: Story = {
+//   args: {
+//     steps: ["Step 1", "Step 2", "Step 3"],
+//     activeStep: 1,
+//     variant: "bar",
+//   },
+// };
 
 export const StepProgressBar: Story = {
   render: () => {

@@ -4,6 +4,14 @@ import { Box, Typography, Button } from "@mui/material";
 const PRIMARY = "#00ade7";
 const INACTIVE = "#D0CDD6";
 
+export interface ProgressBarProps {
+  steps: string[];
+  activeStep: number;
+  variant?: "bar" | "steps";
+  onNext?: () => void;
+  onPrevious?: () => void;
+}
+
 const ProgressBar: React.FC<ProgressBarProps> = ({
   steps,
   activeStep,
@@ -11,8 +19,6 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   onNext,
   onPrevious,
 }) => {
-  const progressPercent = (activeStep / steps.length) * 100;
-
   return (
     <Box
       width="520px"
@@ -23,14 +29,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       textAlign="center"
     >
       {/* TITLE */}
-<Typography fontSize="28px" fontWeight={700} mb={4}>
-  {variant === "steps"
-    ? "Multi-Step Form Progress"
-    : "Step Progress Bar"}
-</Typography>
+      <Typography fontSize="28px" fontWeight={700} mb={4}>
+        {variant === "steps"
+          ? "Multi-Step Form Progress"
+          : "Step Progress Bar"}
+      </Typography>
 
-
-      {/* ================= VARIANT: BAR ================= */}
       {variant === "bar" && (
         <>
           <Box display="flex" gap={2} mb={5}>
@@ -52,7 +56,6 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
         </>
       )}
 
-      {/* ================= VARIANT: STEPS ================= */}
       {variant === "steps" && (
         <>
           <Box display="flex" justifyContent="space-between" mb={5}>
@@ -131,7 +134,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
             py: 1.5,
             borderRadius: "999px",
             textTransform: "none",
-            "&:hover": { bgcolor: "#00ade7" },
+            "&:hover": { bgcolor: PRIMARY },
           }}
         >
           Previous
@@ -147,7 +150,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
             py: 1.5,
             borderRadius: "999px",
             textTransform: "none",
-            "&:hover": { bgcolor: "#00ade7" },
+            "&:hover": { bgcolor: PRIMARY },
           }}
         >
           Next
