@@ -8,7 +8,7 @@ import {
     Box,
 } from "@mui/material";
 
-export interface AppModalProps {
+export interface ModalProps {
     open: boolean;
     title?: string;
     onClose: () => void;
@@ -19,7 +19,7 @@ export interface AppModalProps {
     children: React.ReactNode;
 }
 
-const AppModal: React.FC<AppModalProps> = ({
+const Modal: React.FC<ModalProps> = ({
     open,
     title,
     onClose,
@@ -62,4 +62,4 @@ const AppModal: React.FC<AppModalProps> = ({
     );
 };
 
-export default AppModal;
+export default Modal;

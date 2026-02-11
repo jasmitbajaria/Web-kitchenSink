@@ -8,11 +8,11 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import AppModal from "../components/Modal/AppModal";
+import Modal from "../components/Modal/Modal";
 
-const meta: Meta<typeof AppModal> = {
-  title: "Components/AppModal",
-  component: AppModal,
+const meta: Meta<typeof Modal> = {
+  title: "Components/Modal",
+  component: Modal,
   parameters: {
     layout: "centered",
   },
@@ -20,7 +20,7 @@ const meta: Meta<typeof AppModal> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AppModal>;
+type Story = StoryObj<typeof Modal>;
 
 export const WithTextAndButtons: Story = {
   render: () => {
@@ -32,7 +32,7 @@ export const WithTextAndButtons: Story = {
           Open Modal
         </Button>
 
-        <AppModal
+        <Modal
           open={open}
           title="Delete Confirmation"
           onClose={() => setOpen(false)}
@@ -42,7 +42,7 @@ export const WithTextAndButtons: Story = {
           width={420}
         >
           Are you sure you want to delete this item? This action cannot be undone.
-        </AppModal>
+        </Modal>
       </>
     );
   },
@@ -59,7 +59,7 @@ export const WithDataTable: Story = {
           Open Table Modal
         </Button>
 
-        <AppModal
+        <Modal
           open={open}
           title="User List"
           onClose={() => setOpen(false)}
@@ -88,7 +88,7 @@ export const WithDataTable: Story = {
               ))}
             </TableBody>
           </Table>
-        </AppModal>
+        </Modal>
       </>
     );
   },

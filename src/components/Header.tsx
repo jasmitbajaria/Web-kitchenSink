@@ -140,8 +140,6 @@ const Header: React.FC = () => {
           </Box>
         </Toolbar>
       </AppBar>
-
-      
     </>
   );
 };

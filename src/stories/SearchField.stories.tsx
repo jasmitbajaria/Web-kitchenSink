@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import React, { useState } from "react";
-import AppSearchField from "../components/SearchFeilds/AppSearchField";
+import SearchField from "../components/SearchFeilds/SearchField";
 
-const meta: Meta<typeof AppSearchField> = {
-  title: "Components/AppSearchField",
-  component: AppSearchField,
+const meta: Meta<typeof SearchField> = {
+  title: "Components/SearchField",
+  component: SearchField,
   parameters: {
     layout: "centered",
   },
@@ -12,14 +12,14 @@ const meta: Meta<typeof AppSearchField> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AppSearchField>;
+type Story = StoryObj<typeof SearchField>;
 
 export const Default: Story = {
   render: (args) => {
     const [value, setValue] = useState("");
     return (
       <div style={{ width: 300 }}>
-        <AppSearchField {...args} value={value} onChange={setValue} />
+        <SearchField {...args} value={value} onChange={setValue} />
       </div>
     );
   },
@@ -33,7 +33,7 @@ export const WithValue: Story = {
     const [value, setValue] = useState("John");
     return (
       <div style={{ width: 300 }}>
-        <AppSearchField {...args} value={value} onChange={setValue} />
+        <SearchField {...args} value={value} onChange={setValue} />
       </div>
     );
   },

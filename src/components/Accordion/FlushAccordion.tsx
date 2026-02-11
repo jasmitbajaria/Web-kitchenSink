@@ -7,12 +7,12 @@ export interface FlushAccordionItem {
   content: React.ReactNode;
 }
 
-export interface AppFlushAccordionProps {
+export interface FlushAccordionProps {
   items: FlushAccordionItem[];
   defaultOpenIndex?: number;
 }
 
-const AppFlushAccordion: React.FC<AppFlushAccordionProps> = ({
+const FlushAccordion: React.FC<FlushAccordionProps> = ({
   items,
   defaultOpenIndex = 0,
 }) => {
@@ -103,4 +103,4 @@ const AppFlushAccordion: React.FC<AppFlushAccordionProps> = ({
   );
 };
 
-export default AppFlushAccordion;
+export default FlushAccordion;
