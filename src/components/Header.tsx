@@ -10,7 +10,6 @@ import {
   MenuItem,
   Typography,
   Divider,
-
 } from '@mui/material';
 import {
   Notifications,
@@ -31,16 +30,10 @@ const Header: React.FC = () => {
     setAnchorEl(null);
   };
 
- 
-
-  
-
   const handleLogout = (): void => {
     console.log('Logout clicked');
     handleMenuClose();
   };
-
-  
 
   return (
     <>
@@ -147,8 +140,6 @@ const Header: React.FC = () => {
           </Box>
         </Toolbar>
       </AppBar>
-
-      
     </>
   );
 };

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import React, { useState } from "react";
-import AppOtpInput from "../components/OTPInput/AppOtpInput";
+import OtpInput from "../components/OTPInput/OtpInput";
 
-const meta: Meta<typeof AppOtpInput> = {
-  title: "Components/AppOtpInput",
-  component: AppOtpInput,
+const meta: Meta<typeof OtpInput> = {
+  title: "Components/OtpInput",
+  component: OtpInput,
   parameters: {
     layout: "centered",
   },
@@ -12,12 +12,12 @@ const meta: Meta<typeof AppOtpInput> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AppOtpInput>;
+type Story = StoryObj<typeof OtpInput>;
 
 export const Default: Story = {
   render: (args) => {
     const [otp, setOtp] = useState("");
-    return <AppOtpInput {...args} value={otp} onChange={setOtp} />;
+    return <OtpInput {...args} value={otp} onChange={setOtp} />;
   },
   args: {
     length: 6,
@@ -27,7 +27,7 @@ export const Default: Story = {
 export const FourDigit: Story = {
   render: (args) => {
     const [otp, setOtp] = useState("");
-    return <AppOtpInput {...args} value={otp} onChange={setOtp} />;
+    return <OtpInput {...args} value={otp} onChange={setOtp} />;
   },
   args: {
     length: 4,

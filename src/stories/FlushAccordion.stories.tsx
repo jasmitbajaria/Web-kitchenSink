@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import AppFlushAccordion from "../components/Accordion/AppFlushAccordion";
+import FlushAccordion from "../components/Accordion/FlushAccordion";
 import React from "react";
 import { Box } from "@mui/material";
 
-const meta: Meta<typeof AppFlushAccordion> = {
-  title: "Components/AppFlushAccordion",
-  component: AppFlushAccordion,
+const meta: Meta<typeof FlushAccordion> = {
+  title: "Components/FlushAccordion",
+  component: FlushAccordion,
   parameters: {
     layout: "centered",
   },
@@ -20,7 +20,7 @@ const meta: Meta<typeof AppFlushAccordion> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AppFlushAccordion>;
+type Story = StoryObj<typeof FlushAccordion>;
 
 export const Default: Story = {
   args: {

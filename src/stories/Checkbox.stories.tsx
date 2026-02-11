@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
 import Checkbox from "../components/Checkbox/Checkbox";
+import type { ComponentProps } from "react";
 
 const meta: Meta<typeof Checkbox> = {
-    
   title: "Components/Checkbox",
   component: Checkbox,
   parameters: {
@@ -47,22 +48,37 @@ const meta: Meta<typeof Checkbox> = {
       control: "text",
     },
   },
-  args: {
-    onChange: () => {},
-  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
+// Wrapper component with state
+const CheckboxWithState = (args: ComponentProps<typeof Checkbox>) => {
+  const [checked, setChecked] = useState(args.checked || false);
+  
+  return (
+    <Checkbox
+      {...args}
+      checked={checked}
+      onChange={(newChecked) => {
+        setChecked(newChecked);
+        args.onChange?.(newChecked);
+      }}
+    />
+  );
+};
+
 // Default story
 export const Default: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Default Checkbox",
   },
 };
 
 export const Checked: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Checked Checkbox",
     checked: true,
@@ -70,6 +86,7 @@ export const Checked: Story = {
 };
 
 export const Unchecked: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Unchecked Checkbox",
     checked: false,
@@ -77,6 +94,7 @@ export const Unchecked: Story = {
 };
 
 export const Indeterminate: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Indeterminate Checkbox",
     indeterminate: true,
@@ -84,6 +102,7 @@ export const Indeterminate: Story = {
 };
 
 export const Disabled: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Disabled Checkbox",
     disabled: true,
@@ -91,6 +110,7 @@ export const Disabled: Story = {
 };
 
 export const DisabledChecked: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Disabled Checked",
     checked: true,
@@ -99,6 +119,7 @@ export const DisabledChecked: Story = {
 };
 
 export const Small: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Small Checkbox",
     size: "small",
@@ -106,6 +127,7 @@ export const Small: Story = {
 };
 
 export const Medium: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Medium Checkbox",
     size: "medium",
@@ -113,6 +135,7 @@ export const Medium: Story = {
 };
 
 export const Primary: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Primary Color",
     checked: true,
@@ -121,6 +144,7 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Secondary Color",
     checked: true,
@@ -129,6 +153,7 @@ export const Secondary: Story = {
 };
 
 export const Success: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Success Color",
     checked: true,
@@ -137,6 +162,7 @@ export const Success: Story = {
 };
 
 export const Error: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Error Color",
     checked: true,
@@ -145,6 +171,7 @@ export const Error: Story = {
 };
 
 export const Warning: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Warning Color",
     checked: true,
@@ -153,6 +180,7 @@ export const Warning: Story = {
 };
 
 export const Info: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Info Color",
     checked: true,
@@ -161,6 +189,7 @@ export const Info: Story = {
 };
 
 export const WithHelperText: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "With Helper Text",
     helperText: "This is a helper text",
@@ -168,6 +197,7 @@ export const WithHelperText: Story = {
 };
 
 export const WithErrorState: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Error State",
     error: true,
@@ -176,6 +206,7 @@ export const WithErrorState: Story = {
 };
 
 export const Required: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     label: "Required Field",
     required: true,
@@ -184,6 +215,7 @@ export const Required: Story = {
 };
 
 export const WithoutLabel: Story = {
+  render: (args) => <CheckboxWithState {...args} />,
   args: {
     checked: true,
   },

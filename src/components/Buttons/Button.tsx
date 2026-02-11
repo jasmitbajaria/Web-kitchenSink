@@ -1,7 +1,7 @@
 import React from "react";
 import { Button as MUIButton, CircularProgress } from "@mui/material";
 
-interface AppButtonProps {
+interface ButtonProps {
   label: string;
   onClick?: () => void;
   variant?:
@@ -27,7 +27,7 @@ interface AppButtonProps {
   loading?: boolean;
 }
 
-const AppButton: React.FC<AppButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   label,
   onClick,
   variant = "contained",
@@ -278,4 +278,4 @@ const AppButton: React.FC<AppButtonProps> = ({
   // );
 
 
-export default AppButton;
+export default Button;

@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { Box, TextField } from "@mui/material";
 
-export interface AppOtpInputProps {
+export interface OtpInputProps {
   length?: number;
   value: string;
   onChange: (value: string) => void;
 }
 
-const AppOtpInput: React.FC<AppOtpInputProps> = ({
+const OtpInput: React.FC<OtpInputProps> = ({
   length = 6,
   value,
   onChange,
@@ -45,4 +45,4 @@ const AppOtpInput: React.FC<AppOtpInputProps> = ({
   );
 };
 
-export default AppOtpInput;
+export default OtpInput;

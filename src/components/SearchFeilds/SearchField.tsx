@@ -13,7 +13,7 @@ export interface AppSearchFieldProps {
   placeholder?: string;
 }
 
-const AppSearchField: React.FC<AppSearchFieldProps> = ({
+const searchField: React.FC<AppSearchFieldProps> = ({
   value,
   onChange,
   placeholder = "Search...",
@@ -47,4 +47,4 @@ const AppSearchField: React.FC<AppSearchFieldProps> = ({
   );
 };
 
-export default AppSearchField;
+export default searchField;
