@@ -9,9 +9,9 @@ import {
   Button,
   IconButton,
   Typography,
-  Grid,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import Grid from "@mui/material/Grid";
 
 type ModalType = "address" | "mobile" | "email";
 
@@ -43,9 +43,7 @@ const ModalForm: React.FC<ModalFormProps> = ({
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
-      <DialogTitle
-        sx={{ display: "flex", justifyContent: "space-between" }}
-      >
+      <DialogTitle sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography fontWeight={600}>{getTitle()}</Typography>
         <IconButton onClick={onClose}>
           <CloseIcon />
@@ -56,22 +54,27 @@ const ModalForm: React.FC<ModalFormProps> = ({
         {/* ADDRESS FORM */}
         {type === "address" && (
           <Grid container spacing={2} mt={1}>
-            <Grid xs={12}>
+            <Grid size={12}>
               <TextField label="Address Line 1" fullWidth />
             </Grid>
-            <Grid item xs={12}>
+
+            <Grid size={12}>
               <TextField label="Address Line 2" fullWidth />
             </Grid>
-            <Grid item xs={12} sm={6}>
+
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField label="Area" fullWidth />
             </Grid>
-            <Grid item xs={12} sm={6}>
+
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField label="Pincode" fullWidth />
             </Grid>
-            <Grid item xs={12} sm={6}>
+
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField label="City / District" fullWidth />
             </Grid>
-            <Grid item xs={12} sm={6}>
+
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField label="State" fullWidth />
             </Grid>
           </Grid>
@@ -81,14 +84,15 @@ const ModalForm: React.FC<ModalFormProps> = ({
         {type === "mobile" && (
           <Box mt={2}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={8}>
+              <Grid size={{ xs: 12, sm: 8 }}>
                 <TextField
                   label="Enter Aadhaar Card No"
                   fullWidth
                   type="password"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+
+              <Grid size={{ xs: 12, sm: 4 }}>
                 <Button
                   fullWidth
                   sx={{ height: "56px" }}
@@ -123,6 +127,6 @@ const ModalForm: React.FC<ModalFormProps> = ({
       </DialogActions>
     </Dialog>
   );
-};``
+};
 
 export default ModalForm;
