@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import SelectInput from "../components/SelectInput/SelectInput";
+import Dropdown from "../components/Dropdown/Dropdown";
 
 const options = [
   { label: "Mumbai", value: "mumbai" },
@@ -8,19 +8,20 @@ const options = [
   { label: "Bangalore", value: "bangalore" },
 ];
 
-const meta: Meta<typeof SelectInput> = {
-  title: "Components/SelectInput",
-  component: SelectInput,
+const meta: Meta<typeof Dropdown> = {
+  title: "Components/Dropdown",
+  component: Dropdown,
+  tags: ["autodocs"],
 };
 
 export default meta;
-type Story = StoryObj<typeof SelectInput>;
+type Story = StoryObj<typeof Dropdown>;
 
 export const Default: Story = {
   render: () => {
     const [city, setCity] = useState("");
 
-    return React.createElement(SelectInput, {
+    return React.createElement(Dropdown, {
       label: "City",
       value: city,
       options,
