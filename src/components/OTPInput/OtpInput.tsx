@@ -26,6 +26,31 @@ const OtpInput: React.FC<OtpInputProps> = ({
     }
   };
 
+  const handleKeyDown = (
+    index: number,
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key !== "Backspace") return;
+    e.preventDefault();
+
+    const otpArr = value.split("");
+
+    // If current slot has a value, clear it and move focus to previous (if any)
+    if (otpArr[index]) {
+      otpArr[index] = "";
+      onChange(otpArr.join(""));
+      if (index > 0) inputRefs.current[index - 1]?.focus();
+      return;
+    }
+
+    // Current is empty: move to previous and clear it
+    if (index > 0) {
+      otpArr[index - 1] = "";
+      onChange(otpArr.join(""));
+      inputRefs.current[index - 1]?.focus();
+    }
+  };
+
   return (
     <Box display="flex" gap={1}>
       {Array.from({ length }).map((_, index) => (
@@ -34,6 +59,7 @@ const OtpInput: React.FC<OtpInputProps> = ({
           inputRef={(el) => (inputRefs.current[index] = el!)}
           value={value[index] || ""}
           onChange={(e) => handleChange(index, e.target.value)}
+          onKeyDown={(e) => handleKeyDown(index, e as React.KeyboardEvent<HTMLInputElement>)}
           inputProps={{
             maxLength: 1,
             style: { textAlign: "center", fontSize: 18 },
