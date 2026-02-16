@@ -16,7 +16,7 @@ export type SelectInputProps = {
   helperText?: string;
 };
 
-const SelectInput: React.FC<SelectInputProps> = ({
+const Dropdown: React.FC<SelectInputProps> = ({
   label,
   value,
   options,
@@ -70,4 +70,4 @@ const SelectInput: React.FC<SelectInputProps> = ({
   );
 };
 
-export default SelectInput;
+export default Dropdown;

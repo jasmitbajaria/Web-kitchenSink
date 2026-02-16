@@ -33,8 +33,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
 
   return (
     <TextField
-      variant="outlined"              // IMPORTANT
-      fullWidth
+      variant="outlined"             
       type={showPassword ? "text" : "password"}
       label={label}
       value={value}
@@ -52,7 +51,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
               disabled={disabled}
               aria-label="toggle password visibility"
             >
-              {showPassword ? <VisibilityOff /> : <Visibility />}
+              {showPassword ? <Visibility /> : <VisibilityOff />}
             </IconButton>
           </InputAdornment>
         ),
