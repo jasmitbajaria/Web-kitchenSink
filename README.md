@@ -1,6 +1,15 @@
+
+
 # React Kitchen Sink
 
 A small collection of reusable React components written in TypeScript and showcased with Storybook (React Storybook). Use this repo to develop, preview, and iterate on UI components in isolation.
+
+## Get the code
+Clone the repository and switch to the development branch:
+```bash
+git clone https://github.com/jasmitbajaria/Web-kitchenSink.git
+git checkout development
+```
 
 ## Prerequisites
 - Node.js (14+)
@@ -38,5 +47,4 @@ A small collection of reusable React components written in TypeScript and showca
 - Open issues or PRs.
 - Run linters, formatters, tests and type checks before submitting.
 - Keep commits focused and documented.
-
-
+```
